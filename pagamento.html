@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Pagamento</title>
+    <style>
+        body {
+            background-image: url(fundo-de-papel-de-parede-colorido-embacado-artistico_58702-8287.jpg);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .price {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .payment-method {
+            cursor: pointer;
+            margin: 10px 0;
+            transition: transform 0.2s;
+        }
+        .payment-method:hover {
+            transform: scale(1.05);
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ffeb3b; /* Amarelo para destaque */
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff5722; /* Cor do botão */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .back-button:hover {
+            background-color: #e64a19; /* Cor do botão ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Escolha sua forma de pagamento</h1>
+        <div class="price">Preço: 12x de R$ 120,00</div>
+        <div class="payment-methods">
+            <h2>Formas de Pagamento</h2>
+            <div class="payment-method" onclick="selectPayment('Cartão de Crédito')">💳 Cartão de Crédito</div>
+            <div class="payment-method" onclick="selectPayment('Transferência Bancária')">🏦 Transferência Bancária</div>
+            <div class="payment-method" onclick="selectPayment('Boleto')">💵 Boleto</div>
+            <div class="payment-method" onclick="selectPayment('Pix')">📱 Pix</div>
+        </div>
+        <div class="message" id="paymentMessage"></div>
+        <button class="back-button" onclick="window.location.href='index.html'">Voltar ao Site</button>
+    </div>
+
+    <script>
+        function selectPayment(method) {
+            document.getElementById('paymentMessage').textContent = "Você escolheu: " + method;
+        }
+    </script>
+</body>
+</html>
